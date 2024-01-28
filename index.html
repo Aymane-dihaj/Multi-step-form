@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<link rel="icon" href="./assets/images/favicon.svg">
+	<link rel="stylesheet" href="step-1.css">
+	<link rel="stylesheet" href="step-2.css">
+	<link rel="stylesheet" href="step-3.css">
+	<title>Multi-step Form</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+	<style>
+		input{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div id="side-bar">
+			<div class="step">
+				<div class="circle">1</div>
+				<div class="step-content">
+					<p>STEP 1</p>
+					<b>Your Info</b>
+				</div>
+			</div>
+			<div class="step">
+				<div class="circle">2</div>
+				<div class="step-content">
+					<p>STEP 2</p>
+					<b>Select Plan</b>
+				</div>
+			</div>
+			<div class="step">
+				<div class="circle">3</div>
+				<div class="step-content">
+					<p>STEP 3</p>
+					<b>Add-Ons</b>
+				</div>
+			</div>
+			<div class="step">
+				<div class="circle">4</div>
+				<div class="step-content">
+					<p>STEP 4</p>
+					<b>Summary</b>
+				</div>
+			</div>
+		</div>
+		<!-- Step 1 start -->
+		<div class="stp step-1">
+			<div class="header">
+				<h1 class="title">Personal info</h1>
+				<p>please provide your name, email address, and phone number.</p>
+			</div>
+			<div class="form">
+				<form>
+					<label for="name">Name</label>
+					<input required type="text" id="name" class="info-input" placeholder="e.g Stephany roger">
+					<p class="err"></p>
+					<label for="email">Email Address</label>
+					<input required type="email" id="email" class="info-input" placeholder="e.g. Sthephanyroger@lorem.com">
+					<p class="err"></p>
+					<label for="phone">Phone Number</label>
+					<input required type="tel" id="phone" class="info-input" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="+212 693840922">
+					<p class="err"></p>
+				</form>
+			</div>
+				<div class="btns">
+					<button class="next-step" type="submit">Next Step</button>
+				</div>
+		</div>
+		<!-- Step 2 start -->
+		<div class="stp step-2">
+			<div class="header">
+				<h1 class="title">Select Your Plan</h1>
+				<p>You have the option of monthly or yearly billing.</p>
+			</div>
+			<form>
+				<div class="plan-card selected">
+					<img src="./assets/images/icon-arcade.svg">
+					<div class="plan-info chosen">
+						<b>Arcade</b>
+						<span class="plan-pricing">$9/mo</span>
+					</div>
+				</div>
+				<div class="plan-card">
+					<img src="./assets/images/icon-advanced.svg">
+					<div class="plan-info chosen">
+						<b>Advanded</b>
+						<span class="plan-pricing">$12/mo</span>
+					</div>
+				</div>
+				<div class="plan-card">
+					<img src="./assets/images/icon-pro.svg">
+					<div class="plan-info chosen">
+						<b>Pro</b>
+						<span class="plan-pricing">$20/mo</span>
+					</div>
+				</div>
+			</form>
+			<div class="switcher">
+				<p class="Monthly">Monthly</p>
+				<label class="switch">
+					<input type="checkbox">
+					<span class="slider round"></span>
+				</label>
+				<p class="Yearly">Yearly</p>
+			</div>
+			<div class="btns">
+				<button class="prev-step" type="button">Go Back<button>
+				<button class="next-step" type="submit">Next Step<button>
+			</div>
+		</div>
+		<!--Step 3 start-->
+		<div class="stp step-3">
+			<div class="header">
+				<h1 class="title">Pick add-ons</h1>
+				<p>Add-ons help enhance your gaming experience</p>
+			</div>
+			<form class="box" data-id="1">
+				<input type="checkbox" id="online">
+				<div class="description">
+					<label for="online">Online Service</label>
+					<small>Access to multiple games</small>
+				</div>
+				<p class="price">+$1/mo</p>
+			</form>
+			<form class="box" data-id="2">
+				<input type="checkbox" id="online">
+				<div class="description">
+					<label for="online">Larger storage</label>
+					<small>Extra 1TB of cloud save</small>
+				</div>
+				<p class="price">+$2/mo</p>
+			</form>
+			<form class="box" data-id="3">
+				<input type="checkbox" id="online">
+				<div class="description">
+					<label for="online">Customizable profile</label>
+					<small>Custom theme on your profile</small>
+				</div>
+				<p class="price">+$3/mo</p>
+			</form>
+			<div class="btns">
+				<button class="prev-step" type="button">Go Back<button>
+				<button class="next-step" type="submit">Next Step<button>
+			</div>
+		</div>
+		<!--step 4 start-->
+		<div class="stp step-4">
+			<div class="header">
+				<h1 class="title">Finishing up</h1>
+				<p>Double-check everything looks OK before confirmig.</p>
+			</div>
+			<div class="selection-box">
+				<div class="selection-container">
+					<div class="selected-plan">
+						<p class="plan-name">Arcade(Monthly)</p>
+						<p class="plan-price">$9/mo</p>
+					</div>
+					<hr>
+					<div class="addons">
+						<template>
+							<div class="selected-addons">
+								<span class="service-name">Online service</span>
+								<span class="service-price">+$1/mo</span>
+							</div>
+						</template>
+					</div>
+				</div>
+				<p class="total">Total (per month) <b>+$12/mo</b></p>
+			</div>
+			<div class="btns">
+				<button class="prev-step" type="button">Go Back<button>
+				<button class="next-step" type="submit">Next Step<button>
+			</div>
+		</div>
+		<!--step 5 start-->
+		<div class="stp step-5">
+		<img src="./assets/images/icon-thank-you.svg" alt="thanks">
+		<div class="header">
+			<h1 class="title">Thank You!</h1>
+			<p>Thanks for confirming your subscription! We hope you have fun using our platform, If you ever need support. please feel free to email us at support@loremgaming.com</p>
+		</div>
+		<button class="next-step"></button>
+	</div>
+	</div>
+</body>
+</html>
