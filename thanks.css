@@ -1,0 +1,30 @@
+.step-5
+{
+    width: 100%;
+    border: 3px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.step-5 > img{
+    width: 100px;
+}
+
+.header
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.header > h1
+{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border: 3px solid green;
+    width: 100%;
+}

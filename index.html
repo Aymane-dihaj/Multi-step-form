@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="step-1.css">
 	<link rel="stylesheet" href="step-2.css">
 	<link rel="stylesheet" href="step-3.css">
+	<link rel="stylesheet" href="step-4.css">
+	<link rel="stylesheet" href="thanks.css">
 	<title>Multi-step Form</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,8 +113,8 @@
 				<p class="Yearly">Yearly</p>
 			</div>
 			<div class="btns">
-				<button class="prev-step" type="button">Go Back<button>
-				<button class="next-step" type="submit">Next Step<button>
+				<button class="prev-step" type="button">Go Back</button>
+				<button class="next-step" type="submit">Next Step</button>
 			</div>
 		</div>
 		<!--Step 3 start-->
@@ -121,33 +123,38 @@
 				<h1 class="title">Pick add-ons</h1>
 				<p>Add-ons help enhance your gaming experience</p>
 			</div>
-			<form class="box" data-id="1">
-				<input type="checkbox" id="online">
-				<div class="description">
-					<label for="online">Online Service</label>
-					<small>Access to multiple games</small>
+			<form>
+				<div class="box" data-id="1">
+					<input type="checkbox" class="online">
+					<div class="description">
+						<label for="online">Online Service</label>
+						<br>
+						<small>Access to multiple games</small>
+					</div>
+					<p class="price">+$1/mo</p>
 				</div>
-				<p class="price">+$1/mo</p>
-			</form>
-			<form class="box" data-id="2">
-				<input type="checkbox" id="online">
-				<div class="description">
-					<label for="online">Larger storage</label>
-					<small>Extra 1TB of cloud save</small>
+				<div class="box" data-id="2">
+					<input type="checkbox" class="online">
+					<div class="description">
+						<label for="online">Larger storage</label>
+						<br>
+						<small>Extra 1TB of cloud save</small>
+					</div>
+					<p class="price">+$2/mo</p>
 				</div>
-				<p class="price">+$2/mo</p>
-			</form>
-			<form class="box" data-id="3">
-				<input type="checkbox" id="online">
-				<div class="description">
-					<label for="online">Customizable profile</label>
-					<small>Custom theme on your profile</small>
+				<div class="box" data-id="3">
+					<input type="checkbox" class="online">
+					<div class="description">
+						<label for="online">Customizable profile</label>
+						<br>
+						<small>Custom theme on your profile</small>
+					</div>
+					<p class="price">+$3/mo</p>
 				</div>
-				<p class="price">+$3/mo</p>
 			</form>
 			<div class="btns">
-				<button class="prev-step" type="button">Go Back<button>
-				<button class="next-step" type="submit">Next Step<button>
+				<button class="prev-step" type="button">Go Back</button>
+				<button class="next-step" type="submit">Next Step</button>
 			</div>
 		</div>
 		<!--step 4 start-->
@@ -172,22 +179,22 @@
 						</template>
 					</div>
 				</div>
-				<p class="total">Total (per month) <b>+$12/mo</b></p>
 			</div>
-			<div class="btns">
-				<button class="prev-step" type="button">Go Back<button>
-				<button class="next-step" type="submit">Next Step<button>
+			<p class="total">Total (per month) <b>+$12/mo</b></p>
+				<div class="btns">
+				<button class="prev-step" type="button">Go Back</button>
+				<button class="next-step" type="submit">Next Step</button>
 			</div>
 		</div>
 		<!--step 5 start-->
 		<div class="stp step-5">
-		<img src="./assets/images/icon-thank-you.svg" alt="thanks">
-		<div class="header">
-			<h1 class="title">Thank You!</h1>
-			<p>Thanks for confirming your subscription! We hope you have fun using our platform, If you ever need support. please feel free to email us at support@loremgaming.com</p>
+			<img src="./assets/images/icon-thank-you.svg" alt="thanks">
+			<div class="header">
+				<h1 class="title">Thank You!</h1>
+				<p>Thanks for confirming your subscription! We hope you have fun using our platform, If you ever need support. please feel free to email us at support@loremgaming.com</p>
+			</div>
+			<button class="next-step"></button>
 		</div>
-		<button class="next-step"></button>
-	</div>
 	</div>
 </body>
 </html>

@@ -1,6 +1,7 @@
 :root
 {
-    --Marine-blue: hsl(213, 96%, 18%);
+    --Marine-blue: hsl(213, 96%, 28%);
+    --Dark-Marine-blue: hsl(213, 96%, 20%);
     --Purplish-blue: hsl(243, 100%, 62%);
     --Pastel-blue: hsl(228, 100%, 84%);
     --Light-blue: hsl(206, 94%, 87%);
@@ -129,7 +130,7 @@ body
 
 .header > h1
 {
-    color: var(--Marine-blue);
+    color: var(--Dark-Marine-blue);
 }
 
 .header p
@@ -168,13 +169,18 @@ body
     transition: background-color 0.1s ease-in-out;
 }
 
-.btns > button:hover
+.btns > .next-step:hover
 {
     cursor: pointer;
     background-color: var(--Strawberry-red);
 }
 
-.step-1, .step-3, .step-4, .step-5, .err
+.btns > button:hover
+{
+    cursor: pointer;
+}
+
+.step-1, .step-2, .step-3, .step-4, .err
 {
     display: none;
 
