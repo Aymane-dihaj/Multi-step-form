@@ -54,7 +54,7 @@ body
 
 #side-bar
 {
-    background-image: url('./assets/images/bg-sidebar-desktop.svg');
+    background-image: url('../assets/images/bg-sidebar-desktop.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -118,6 +118,11 @@ body
     
 }
 
+.active .circle
+{
+    background-color: var(--Light-blue);
+    color: var(--Dark-Marine-blue);
+}
 
 .header
 {
@@ -180,8 +185,32 @@ body
     cursor: pointer;
 }
 
-.step-1, .step-2, .step-3, .step-4, .err
+.step-2, .step-3, .step-4, .step-5, .err
 {
     display: none;
-
 }
+
+.hidden
+{
+    display: none;
+}
+
+.err
+{
+    color: red;
+    font-size: 13px;
+    width: max-content;
+    height: max-content;
+    padding-left: 5px;
+}
+
+.bonus
+{
+    width: 100%;
+    font-size: 12px;
+    display: none;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2px;
+}
+

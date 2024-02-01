@@ -11,6 +11,7 @@
     --Magnolia: hsl(217, 100%, 97%);
     --Alabaster: hsl(231, 100%, 99%);
     --White: hsl(0, 0%, 100%);
+    --selected: rgb(241, 241, 250);
 }
 
 
@@ -31,7 +32,7 @@
     border: 1px solid var(--Light-gray);
     border-radius: 5px;
     width: 22%;
-    height: 150px;
+    height: 160px;
     display: flex;
     flex-direction: column;
     gap: 35px;
@@ -48,7 +49,7 @@
 {
     border-width: 1.8px;
     border-color: var(--Marine-blue);   
-    background-color: var(--Alabaster);
+    background-color: var(--selected);
 }
 
 .plan-card img
