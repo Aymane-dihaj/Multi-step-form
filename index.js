@@ -6,6 +6,9 @@ const switcher = document.querySelector(".switch");
 const addons = document.querySelectorAll(".box");
 const total = document.querySelectorAll(".total b");
 const planPrice = document.querySelectorAll(".plan-price");
+const selectedAddons = document.querySelector(".addons")
+
+console.log(selectedAddons)
 
 let currentStep = 1;
 let currentCircle = 0;
@@ -61,20 +64,79 @@ steps.forEach(step => {
     }
 })
 
+let usedAddons = [];
+
+function checkDup(index)
+{
+    for (let i = 0; i < usedAddons.length; i++)
+    {
+        if (usedAddons[i] === index)
+            return true;
+    }
+    return false;;
+}
 
 function storeAddOns()
 {
+    console.log(iDs);
     for (let i = 0; i < addons.length; i++)
     {
-        //we are here
+        for(let j = 0; j < iDs.length; j++){
+            if (addons[i].getAttribute("data-id") === iDs[j])
+            {
+                if (checkDup(iDs[j]) === false){
+                    usedAddons.push(iDs[j]);
+                    let parent = document.createElement("div");
+                    parent.classList.add("selected-addon")
+                    let name = document.createElement("p");
+                    name.classList.add("service-name");
+                    name.textContent = addons[i].querySelector("label").textContent;
+                    parent.appendChild(name);
+                    let price = document.createElement("span");
+                    price.classList.add("service-name");
+                    price.textContent = addons[i].querySelector(".price").textContent;
+                    parent.appendChild(price);
+                    selectedAddons.appendChild(parent);
+                    totalPrice += 2;
+                }
+            }
+        }
     }
 }
 
+function isYearly()
+{
+    if (planDetails.type === true)
+        return "Yearly";
+    return "Monthly"
+}
+
+function isYearlyTotal()
+{
+    if (planDetails.type === true)
+        return "per year";
+    return "per month"
+}
+let totalPrice = 0;
+
 function setTotal()
 {
+    const selectedPlan = document.querySelector(".selected-plan");
+    selectedPlan.querySelector(".plan-name").textContent = planDetails.name + " (" + isYearly() + ")"
+    selectedPlan.querySelector(".plan-price").textContent = planDetails.price;
     if (iDs.length > 0)
         storeAddOns();
-
+    total[0].textContent = `Total (${isYearlyTotal()})`;
+    if (planDetails.name === "Pro")
+        totalPrice += 25;
+    else if (planDetails.name === "Advanced")
+        totalPrice += 15;
+    else if (planDetails.name === "Arcade")
+        totalPrice += 10;
+    // you are here
+    // need to update the total price;
+    //almost finish
+    total[1].textContent = `+$${totalPrice}/${}`
 }
 
 
