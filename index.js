@@ -4,11 +4,11 @@ const formInputs = document.querySelectorAll(".step-1 form input");
 const plans = document.querySelectorAll(".plan-card");
 const switcher = document.querySelector(".switch");
 const addons = document.querySelectorAll(".box");
-const total = document.querySelectorAll(".total b");
+const total = document.querySelectorAll(".total");
+const priceOfAll = document.querySelector(".total-price");
 const planPrice = document.querySelectorAll(".plan-price");
 const selectedAddons = document.querySelector(".addons")
 
-console.log(selectedAddons)
 
 let currentStep = 1;
 let currentCircle = 0;
@@ -119,24 +119,42 @@ function isYearlyTotal()
 }
 let totalPrice = 0;
 
+const proYearlyPrice = 30;
+const ArcadeYearlyPrice = 19;
+const advancedYearlyPrice = 25;
+
+function checkPlanName(name)
+{
+    if (name === "Arcade")
+        return ArcadeYearlyPrice;
+    else if (name === "Advanced")   
+        return advancedYearlyPrice;
+    else if (name === "Pro")
+        return proYearlyPrice;
+}
+
 function setTotal()
 {
     const selectedPlan = document.querySelector(".selected-plan");
     selectedPlan.querySelector(".plan-name").textContent = planDetails.name + " (" + isYearly() + ")"
-    selectedPlan.querySelector(".plan-price").textContent = planDetails.price;
+    let price = selectedPlan.querySelector(".plan-price");
+    if (planDetails.type === true)
+        price.textContent = `$${checkPlanName(planDetails.name)}/yr`
+    else price.textContent = planDetails.price;
     if (iDs.length > 0)
         storeAddOns();
-    total[0].textContent = `Total (${isYearlyTotal()})`;
+    total.textContent = `Total (${isYearlyTotal()})`;
     if (planDetails.name === "Pro")
-        totalPrice += 25;
-    else if (planDetails.name === "Advanced")
+        totalPrice += 20;
+    if (planDetails.name === "Advanced")
         totalPrice += 15;
-    else if (planDetails.name === "Arcade")
-        totalPrice += 10;
-    // you are here
-    // need to update the total price;
-    //almost finish
-    total[1].textContent = `+$${totalPrice}/${}`
+    if (planDetails.name === "Arcade")
+        totalPrice += 9;
+    if (planDetails.type === true)
+        totalPrice += 10
+    for (let i = 0; i < iDs.length; i++)
+        totalPrice += 5;
+    priceOfAll.textContent = `$${totalPrice}`;
 }
 
 
