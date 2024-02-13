@@ -4,7 +4,7 @@ const formInputs = document.querySelectorAll(".step-1 form input");
 const plans = document.querySelectorAll(".plan-card");
 const switcher = document.querySelector(".switch");
 const addons = document.querySelectorAll(".box");
-const total = document.querySelectorAll(".total");
+const total = document.querySelector(".total");
 const priceOfAll = document.querySelector(".total-price");
 const planPrice = document.querySelectorAll(".plan-price");
 const selectedAddons = document.querySelector(".addons")
@@ -97,7 +97,6 @@ function storeAddOns()
                     price.textContent = addons[i].querySelector(".price").textContent;
                     parent.appendChild(price);
                     selectedAddons.appendChild(parent);
-                    totalPrice += 2;
                 }
             }
         }
@@ -115,9 +114,9 @@ function isYearlyTotal()
 {
     if (planDetails.type === true)
         return "per year";
-    return "per month"
+    else
+        return "per month"
 }
-let totalPrice = 0;
 
 const proYearlyPrice = 30;
 const ArcadeYearlyPrice = 19;
@@ -135,6 +134,7 @@ function checkPlanName(name)
 
 function setTotal()
 {
+    let totalPrice = 0;
     const selectedPlan = document.querySelector(".selected-plan");
     selectedPlan.querySelector(".plan-name").textContent = planDetails.name + " (" + isYearly() + ")"
     let price = selectedPlan.querySelector(".plan-price");
@@ -143,9 +143,8 @@ function setTotal()
     else price.textContent = planDetails.price;
     if (iDs.length > 0)
         storeAddOns();
-    total.textContent = `Total (${isYearlyTotal()})`;
     if (planDetails.name === "Pro")
-        totalPrice += 20;
+    totalPrice += 20;
     if (planDetails.name === "Advanced")
         totalPrice += 15;
     if (planDetails.name === "Arcade")
@@ -154,7 +153,9 @@ function setTotal()
         totalPrice += 10
     for (let i = 0; i < iDs.length; i++)
         totalPrice += 5;
+    console.log(priceOfAll)
     priceOfAll.textContent = `$${totalPrice}`;
+    total.textContent = `Total (${isYearlyTotal()})`;
 }
 
 

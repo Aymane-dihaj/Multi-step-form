@@ -62,18 +62,22 @@ hr
 .total
 {
     /* border: 3px solid red; */
-    width: 70%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: -20px;
     font-size: 14px;
     color: var(--Cool-gray);
 }
 
+.total-section
+{
+    width: 70%;
+    margin-top: -20px;
+    display: flex;
+    justify-content: space-between;
+}
 
-.total > b
+.total-price
 {
     font-size: 16px;
+    font-weight: 600;
     color: var(--Purplish-blue);
 }
 
