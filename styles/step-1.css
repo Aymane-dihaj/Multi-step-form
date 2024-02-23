@@ -64,3 +64,18 @@
     font-weight: 400;
     margin-top: 10px;
 }
+
+.next-step{
+    animation: slid-left 0.5s ease-in-out;
+}
+
+@keyframes slid-left {
+    0%{
+        transform: translateX(40%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+} 

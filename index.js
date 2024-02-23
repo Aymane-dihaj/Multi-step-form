@@ -44,7 +44,6 @@ steps.forEach(step => {
                 circlesSteps[currentCircle].classList.add("active");
             if (currentStep === 2)
                 selectPlans();
-            console.log("name: " + planDetails.name + " | price: " + planDetails.price +  " | type: " + planDetails.type);
             if (currentStep === 3)
                 addOnsStep();
             if (currentStep === 4)
@@ -78,7 +77,6 @@ function checkDup(index)
 
 function storeAddOns()
 {
-    console.log(iDs);
     for (let i = 0; i < addons.length; i++)
     {
         for(let j = 0; j < iDs.length; j++){
@@ -153,7 +151,6 @@ function setTotal()
         totalPrice += 10
     for (let i = 0; i < iDs.length; i++)
         totalPrice += 5;
-    console.log(priceOfAll)
     priceOfAll.textContent = `$${totalPrice}`;
     total.textContent = `Total (${isYearlyTotal()})`;
 }
